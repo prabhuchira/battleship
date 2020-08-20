@@ -1,0 +1,87 @@
+.listItem{
+    font-size: 27px;
+    color: goldenrod;
+    border: 1px solid white;
+    padding: 22px;
+    margin: 20px;
+    background: ghostwhite;
+    border-radius: 3px;
+}
+
+.windows{
+    background:#f63131;
+    color:white
+}
+
+.container{
+    background-image: url("./water.png");
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ship{
+    height:100px;
+}
+
+#carrier{
+    width:500px;
+    background:silver;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size:26px;
+}
+
+#battleship{
+    width:400px;
+    background:yellow;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size:26px;
+}
+
+#cruiser{
+    width:300px;
+    background:rgb(0, 247, 255);
+    text-align: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size:26px;
+}
+
+#submarine{
+    width:300px;
+    background:rgb(255, 0, 212);
+    text-align: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size:26px;
+}
+
+#destroyer{
+    width:200px;
+    background:rgb(9, 255, 0);
+    text-align: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size:26px;
+}
+
+
+
+.rotate{
+    transform: rotateX(90);
+}
