@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded",()=>{
 
 
@@ -11,6 +14,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         el.dataTransfer.setData("shipName",el.target.id);
         // console.log(el.target.clientWidth)
         el.dataTransfer.setData("shipWidth",el.target.clientWidth)
+
         el.dataTransfer.dropEffect="copy"
     }
     
@@ -40,6 +44,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
 
     let element=document.getElementById('main-container');
+    let trackScreens=[];
 
     element.addEventListener("dragover",(e)=>{
         e.preventDefault();
@@ -65,11 +70,7 @@ document.addEventListener("DOMContentLoaded",()=>{
          
          let el = document.createElement("div")
         let shipsContainer =document.getElementById("shipContainers").children
-         for(let i=0;i<shipsContainer.length;i++)
-         {
-            if(shipsContainer[i].id==shipName)
-            shipsContainer[i].remove();
-         }
+         
 
         el.id=shipName;
 
@@ -85,6 +86,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
         let screen =0;
+       
      
         console.log(e.clientX)
         console.log(Number(shipWidth))
@@ -92,8 +94,30 @@ document.addEventListener("DOMContentLoaded",()=>{
         console.log(sum);
         // if( (Number(shipWidth)) >screen){
         if( sum<=1010){
+            
 
-            element.append(el)
+            let trackTop=trackScreens.every(i=>Number(roundNumber(e.clientY))!==Number(i));
+
+            if(trackTop){
+                console.log(trackTop,roundNumber(e.clientY),"track")
+
+                element.append(el);
+                trackScreens.push(Number(roundNumber(e.clientY)))
+                console.log(trackScreens,"array")
+                console.log(roundNumber(e.clientX),"x")
+                //console.log(el.offsetTop)
+                document.getElementById(el.previousSibling.id)
+                for(let i=0;i<shipsContainer.length;i++)
+             {
+                if(shipsContainer[i].id==shipName)
+                shipsContainer[i].remove();
+             }
+            }
+            
+          
+
+
+
         }
 
         
