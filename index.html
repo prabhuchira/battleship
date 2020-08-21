@@ -7,41 +7,48 @@
     <link href="./main.css" rel="stylesheet" />
   </head>
   <body>
-    Battleship game
+    
 
 
-
-        <div class="container">
+      <div style="display: flex;">
+        <div class="container" id="main-container" >
             <!-- <div style="display: flex;flex-direction: row;">
                 <div style="width:100px;height: 100px;background-color: green;"></div>
                 <div style="width:100px;height: 100px;background-color: green;"></div>
                 <div style="width:100px;height: 100px;background-color: green;"></div>
             </div> -->
 
-            <div id="carrier" class="ship"  >
-                Carrier
-            </div>
-            
-            <div id="battleship" class="ship" >
-                  Battleship
-            </div>
-
-            <div id="cruiser" class="ship" >
-                  Cruiser
-            </div>
-
-            <div id="submarine" class="ship" >
-              Submarine
-            </div>
-
-            <div id="destroyer" class="ship" >
-              Destroyer
-            </div>
 
 
         </div>
 
 
+
+
+        <div class="shipContainer" id="shipContainers">
+          <div id="carrier" class="ship" draggable="true" >
+            Carrier
+        </div>
+        
+        <div id="battleship" class="ship" draggable="true" >
+              Battleship
+        </div>
+
+        <div id="cruiser" class="ship" draggable="true" >
+              Cruiser
+        </div>
+
+        <div id="submarine" class="ship" draggable="true" >
+          Submarine
+        </div>
+
+        <div id="destroyer" class="ship" draggable="true" >
+          Destroyer
+        </div>
+
+        </div>
+
+      </div>
         
     <script src="./script.js" type="text/javascript"></script>
   </body>
