@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     document.getElementById("submarine").addEventListener("dragstart",dragStarted);
     document.getElementById("destroyer").addEventListener("dragstart",dragStarted);
 
+   
+   
+
     function dragStarted(el){
         el.dataTransfer.setData("shipName",el.target.id);
         // console.log(el.target.clientWidth)
@@ -20,7 +23,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     
     function roundNumber(num){
         let formattedNum = String(num)
-        console.log(formattedNum.length)
+        
 
         let firstDigit = formattedNum.charAt(0);
 
@@ -61,7 +64,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         
         let xPosition = roundNumber(e.x);
         let yPosition =roundNumber(e.y);
-        console.log(xPosition,yPosition)
+        
         
         
         let shipName=e.dataTransfer.getData("shipname");
@@ -87,25 +90,33 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         let screen =0;
        
-     
-        console.log(e.clientX)
-        console.log(Number(shipWidth))
+   
         let sum =e.clientX+Number(shipWidth)
-        console.log(sum);
+ 
         // if( (Number(shipWidth)) >screen){
         if( sum<=1010){
             
+            console.log(e.clientX,e.clientY)
+            console.log()
+            let trackTop=trackScreens.every(i=>Number(roundNumber(e.clientY))!==(Number(i.shipHeight) ));
 
-            let trackTop=trackScreens.every(i=>Number(roundNumber(e.clientY))!==Number(i));
-
+            console.log(trackTop,"true pr")
             if(trackTop){
-                console.log(trackTop,roundNumber(e.clientY),"track")
-
+               
                 element.append(el);
-                trackScreens.push(Number(roundNumber(e.clientY)))
-                console.log(trackScreens,"array")
-                console.log(roundNumber(e.clientX),"x")
-                //console.log(el.offsetTop)
+                trackScreens.push(
+                    {
+                        shipHeight:Number(roundNumber(e.clientY)),
+                        shipWidth:Number(roundNumber(e.clientX))
+                    }
+                )
+
+                if(trackScreens.length>=5){
+                    document.getElementById("displayIt").style.display="block"
+                }
+                console.log(trackScreens)
+                
+            
                 document.getElementById(el.previousSibling.id)
                 for(let i=0;i<shipsContainer.length;i++)
              {
@@ -123,6 +134,9 @@ document.addEventListener("DOMContentLoaded",()=>{
         
 
     })
+
+
+
 
     
 

@@ -25,19 +25,23 @@ body{
     display: flex;
     flex-direction: column;
     position: relative;
-    background-attachment: fixed;
+    background-attachment: local;
 
 }
 
 .shipContainer{
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
 }
 
 .ship{
     height:100px;
 }
 
-#carrier{
+#carrier,#computer-carrier{
     width:500px;
     background:silver;
     display: flex;
@@ -47,7 +51,7 @@ body{
     font-size:26px;
 }
 
-#battleship{
+#battleship,#computer-battleship{
     width:400px;
     background:yellow;
     text-align: center;
@@ -58,7 +62,7 @@ body{
     font-size:26px;
 }
 
-#cruiser{
+#cruiser,#computer-cruiser{
     width:300px;
     background:rgb(0, 247, 255);
     text-align: center;
@@ -69,7 +73,7 @@ body{
     font-size:26px;
 }
 
-#submarine{
+#submarine,#computer-submarine{
     width:300px;
     background:rgb(255, 0, 212);
     text-align: center;
@@ -80,7 +84,7 @@ body{
     font-size:26px;
 }
 
-#destroyer{
+#destroyer,#computer-destroyer{
     width:200px;
     background:rgb(9, 255, 0);
     text-align: center;
@@ -97,4 +101,21 @@ body{
 
 .rotate{
     transform: rotateX(90);
+}
+
+
+
+.startButton{
+    align-self:flex-end;
+    margin:25px 25px;
+    padding:10px;
+    /* border:none; */
+    font-size:30px;
+    /* background:cyan; */
+    flex:1;
+    align-self:auto;
+}
+
+#displayIt{
+    display:none;   
 }
